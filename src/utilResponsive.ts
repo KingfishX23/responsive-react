@@ -3,12 +3,18 @@ import { IdDeviceTypeBreakdown, IdDeviceType, IdDeviceOrientation, IdMobileHeigh
 
 
 export const getWindowDimension = (): IWindowDimensionMetrics => {
-    const x = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    const y = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
+    if(typeof window !== "undefined"){
+        const x = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        const y = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
 
+        return {
+            width: x,
+            height: y
+        }
+    }
     return {
-        width: x,
-        height: y
+        width: 1,
+        height: 1
     }
 };
 
