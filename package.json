@@ -12,7 +12,8 @@
     "start": "rollup -c -w",
     "test": "jest",
     "coverage": "npm run test -- --coverage --watchAll=false",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "postinstall": "npm run build"
   },
   "keywords": [
     "conditional-render",
